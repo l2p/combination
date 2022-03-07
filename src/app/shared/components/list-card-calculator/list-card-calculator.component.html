@@ -1,0 +1,41 @@
+<ng-container *ngIf="data.equal; else choice">
+	<p>
+		Votre montant est composé de<span *ngIf="data.equal.cards.length > 1"
+			>s</span
+		>
+		carte<span *ngIf="data.equal.cards.length > 1">s</span> suivante<span
+			*ngIf="data.equal.cards.length > 1"
+			>s</span
+		>:
+	</p>
+	<mat-list>
+		<mat-list-item *ngFor="let card of data.equal.cards">
+			{{ card }} €
+		</mat-list-item>
+	</mat-list>
+</ng-container>
+<ng-template #choice>
+	<p>
+		Le montant que vous avez saisi n'est pas disponible, veuillez choisir
+		parmi les propositions suivantes :
+	</p>
+	<mat-selection-list [multiple]="false">
+		<mat-list-option
+			*ngIf="data.ceil"
+			(click)="patchAmount(data.ceil.value, data.ceil.cards)"
+		>
+			<div class="item-card" *ngFor="let card of data.ceil.cards">
+				- une carte de {{ card }} €
+			</div>
+		</mat-list-option>
+
+		<mat-list-option
+			*ngIf="data.floor"
+			(click)="patchAmount(data.floor.value, data.floor.cards)"
+		>
+			<div class="item-card" *ngFor="let card of data.floor.cards">
+				- une carte de {{ card }} €
+			</div>
+		</mat-list-option>
+	</mat-selection-list>
+</ng-template>

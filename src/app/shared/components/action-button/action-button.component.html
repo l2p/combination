@@ -1,0 +1,18 @@
+<button
+	[disabled]="disabled"
+	id="action-button"
+	[ngClass]="getCSSClass()"
+	[ngStyle]="{ 'font-size': fontSize, width: width }"
+>
+	<ng-container *ngIf="!isLoading; else loading">
+		<ng-content></ng-content>
+	</ng-container>
+	<ng-template #loading>
+		<mat-progress-spinner
+			[diameter]="20"
+			color="primary"
+			mode="indeterminate"
+		>
+		</mat-progress-spinner>
+	</ng-template>
+</button>

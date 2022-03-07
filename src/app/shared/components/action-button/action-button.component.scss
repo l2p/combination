@@ -1,0 +1,28 @@
+:host {
+  #action-button {
+    padding: 8px 18px;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 12px;
+    border: 1px solid;
+    cursor: pointer;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.normal {
+      color: black;
+      background-color: #f1eeef;
+      border-color: black;
+    }
+
+    &.disabled {
+      color: #938d8e;
+      border-color: #f1eeef;
+      background-color: #f1eeef;
+      cursor: not-allowed;
+    }
+  }
+}

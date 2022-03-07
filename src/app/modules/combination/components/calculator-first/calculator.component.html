@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="container-form">
+		<div class="container-form-input">
+			<app-input-calculator
+				[label]="label"
+				[type]="inputType"
+				[placeholder]="placeholder"
+				[required]="fieldInputRequired"
+				[value]="value"
+				(changeValue)="newValue($event)"
+			></app-input-calculator>
+		</div>
+
+		<div class="container-form-action">
+			<app-action-button
+				class="action"
+				[isLoading]="isLoading"
+				[disabled]="disabledValid()"
+				(click)="onValidateClick()"
+			>
+				{{ 'Valider' }}
+			</app-action-button>
+		</div>
+	</div>
+
+	<div class="container-results" *ngIf="dataR">
+		<app-list-card-calculator
+			[data]="dataR"
+			(chooseValue)="patchAmount($event)"
+		></app-list-card-calculator>
+	</div>
+</div>

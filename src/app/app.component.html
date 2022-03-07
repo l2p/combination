@@ -1,0 +1,21 @@
+<div class="level">
+	<mat-card class="level-1">
+		<h1>Level 1</h1>
+		<app-calculator (amountEmit)="onValueChange($event)"></app-calculator>
+	</mat-card>
+	<mat-card class="level-2">
+		<h1>Level 2</h1>
+		<app-calculator-two
+			(amountEmit)="onValueChange($event)"
+		></app-calculator-two>
+	</mat-card>
+	<mat-card class="level-3">
+		<h1>Level 3</h1>
+
+		<form [formGroup]="form">
+			<app-calculator-three
+				formControlName="calculatorCtrl"
+			></app-calculator-three>
+		</form>
+	</mat-card>
+</div>

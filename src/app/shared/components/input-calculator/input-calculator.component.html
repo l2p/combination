@@ -1,0 +1,13 @@
+<mat-form-field>
+	<mat-label>{{ label }}</mat-label>
+	<input
+		[type]="type"
+		matInput
+		[required]="required"
+		[placeholder]="placeholder"
+		[(ngModel)]="value"
+		(ngModelChange)="emmitValue()"
+		#content="ngModel"
+	/>
+	<mat-error *ngIf="content.invalid">Ce champs est requis !</mat-error>
+</mat-form-field>

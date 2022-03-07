@@ -1,0 +1,78 @@
+{
+	"name": "calculator-front",
+	"version": "0.0.0",
+	"scripts": {
+		"ng": "ng",
+		"start": "ng serve",
+		"build": "ng build",
+		"watch": "ng build --watch --configuration development",
+		"test:coverage": "jest --coverage",
+		"test:watch": "jest --watch",
+		"test:detect": "jest --detectOpenHandles",
+		"lint": "ng lint",
+		"lint:fix": "ng lint --fix",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run",
+		"compodoc": "compodoc -p tsconfig.app.json -s"
+	},
+	"private": true,
+	"dependencies": {
+		"@angular/animations": "~12.2.0",
+		"@angular/cdk": "^12.2.13",
+		"@angular/common": "~12.2.0",
+		"@angular/compiler": "~12.2.0",
+		"@angular/core": "~12.2.0",
+		"@angular/forms": "~12.2.0",
+		"@angular/material": "^12.2.13",
+		"@angular/platform-browser": "~12.2.0",
+		"@angular/platform-browser-dynamic": "~12.2.0",
+		"@angular/router": "~12.2.0",
+		"rxjs": "~6.6.0",
+		"tslib": "^2.3.0",
+		"zone.js": "~0.11.4"
+	},
+	"devDependencies": {
+		"@angular-builders/jest": "^13.0.3",
+		"@angular-devkit/build-angular": "~12.2.7",
+		"@angular-eslint/builder": "12.7.0",
+		"@angular-eslint/eslint-plugin": "12.7.0",
+		"@angular-eslint/eslint-plugin-template": "12.7.0",
+		"@angular-eslint/schematics": "12.7.0",
+		"@angular-eslint/template-parser": "12.7.0",
+		"@angular/cli": "~12.2.7",
+		"@angular/compiler-cli": "~12.2.0",
+		"@cypress/schematic": "^1.6.0",
+		"@types/jasmine": "~3.8.0",
+		"@types/jest": "^27.4.1",
+		"@types/node": "^12.11.1",
+		"@typescript-eslint/eslint-plugin": "4.28.2",
+		"@typescript-eslint/parser": "4.28.2",
+		"cypress": "latest",
+		"eslint": "^7.26.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"jasmine-core": "~3.8.0",
+		"jest": "^27.5.1",
+		"jest-preset-angular": "^11.1.1",
+		"karma-coverage": "~2.0.3",
+		"prettier": "^2.5.1",
+		"typescript": "~4.3.5"
+	},
+	"jest": {
+		"preset": "jest-preset-angular",
+		"setupFilesAfterEnv": [
+			"<rootDir>/setupJest.js"
+		],
+		"testPathIgnorePatterns": [
+			"<rootDir>/node_modules/",
+			"<rootDir>/dist/",
+			"<rootDir>/cypress/"
+		],
+		"globals": {
+			"ts-jest": {
+				"tsConfig": "<rootDir>/tsconfig.spec.json",
+				"stringifyContentPathRegex": "\\.html$"
+			}
+		}
+	}
+}

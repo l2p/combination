@@ -1,0 +1,14 @@
+<div id="input-form-calculator-content" [formGroup]="form">
+	<mat-form-field class="form-field">
+		<mat-label>{{ label }}</mat-label>
+		<input
+			[type]="type"
+			matInput
+			[placeholder]="placeholder"
+			[formControlName]="controlName"
+			autocomplete="off"
+			[required]="required"
+		/>
+		<mat-error *ngIf="form.invalid"> Ce champs est requis ! </mat-error>
+	</mat-form-field>
+</div>
